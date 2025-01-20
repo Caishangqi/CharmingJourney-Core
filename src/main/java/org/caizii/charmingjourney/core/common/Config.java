@@ -1,4 +1,4 @@
-package org.caizii.charmingjourney;
+package org.caizii.charmingjourney.core.common;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;

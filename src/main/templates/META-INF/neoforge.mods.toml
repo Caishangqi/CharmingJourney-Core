@@ -25,7 +25,7 @@ updateJSONURL = "https://charmingcraft.caizii.org/" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
 displayURL = "https://charmingcraft.caizii.org/" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
-#logoFile="charmingjourney.png" #optional
+logoFile="assets/charmingjourney/textures/charmingjourney.png" #optional
 # A text field displayed in the mod UI
 #credits="" #optional
 # A text field displayed in the mod UI
