@@ -1,4 +1,4 @@
-package org.caizii.charmingjourney;
+package org.caizii.charmingjourney.core.common;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
@@ -30,6 +30,7 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import org.caizii.charmingjourney.core.common.block.SiltBlock;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
@@ -48,8 +49,13 @@ public class CharmingJourney {
 
     // Creates a new Block with the id "charmingjourney:example_block", combining the namespace and path
     public static final DeferredBlock<Block> EXAMPLE_BLOCK = BLOCKS.registerSimpleBlock("example_block", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
+
+    public static final DeferredBlock<Block> SILT_BLOCK = BLOCKS.registerBlock("silt_block", SiltBlock::new);
+
     // Creates a new BlockItem with the id "charmingjourney:example_block", combining the namespace and path
     public static final DeferredItem<BlockItem> EXAMPLE_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("example_block", EXAMPLE_BLOCK);
+
+    public static final DeferredItem<BlockItem> SILT_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("silt_block", SILT_BLOCK);
 
     // Creates a new food item with the id "charmingjourney:example_id", nutrition 1 and saturation 2
     public static final DeferredItem<Item> EXAMPLE_ITEM = ITEMS.registerSimpleItem("example_item", new Item.Properties().food(new FoodProperties.Builder().alwaysEdible().nutrition(1).saturationModifier(2f).build()));
@@ -97,7 +103,10 @@ public class CharmingJourney {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) event.accept(EXAMPLE_BLOCK_ITEM);
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(EXAMPLE_BLOCK_ITEM);
+            event.accept(SILT_BLOCK_ITEM);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

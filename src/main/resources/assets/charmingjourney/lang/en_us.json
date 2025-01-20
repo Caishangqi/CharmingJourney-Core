@@ -1,5 +1,6 @@
 {
   "itemGroup.charmingjourney": "Example Mod Tab",
   "block.charmingjourney.example_block": "Example Block",
-  "item.charmingjourney.example_item": "Example Item"
+  "item.charmingjourney.example_item": "Example Item",
+  "block.charmingjourney.silt_block": "Silt Block"
 }
