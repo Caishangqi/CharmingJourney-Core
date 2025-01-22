@@ -6,6 +6,7 @@ import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.data.PackOutput;
 import org.caizii.charmingjourney.core.common.CharmingJourney;
+import org.caizii.charmingjourney.core.common.registration.BlockDeferredRegister;
 
 public class CCJModelProvider extends ModelProvider {
     public CCJModelProvider(PackOutput output) {
@@ -14,8 +15,8 @@ public class CCJModelProvider extends ModelProvider {
 
     @Override
     protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
-        blockModels.createTrivialCube(CharmingJourney.SILT_BLOCK.get());
-        itemModels.generateFlatItem(CharmingJourney.SILT_BLOCK_ITEM.get(), ModelTemplates.FLAT_ITEM);
+        blockModels.createTrivialCube(BlockDeferredRegister.SILT_BLOCK.get());
+        itemModels.generateFlatItem(BlockDeferredRegister.SILT_BLOCK.asItem(), ModelTemplates.FLAT_ITEM);
     }
 
 }
